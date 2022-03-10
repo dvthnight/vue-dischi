@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HeaderSpotify/>
+    <MainSpotify/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HeaderSpotify from "./components/HeaderSpotify.vue"
+import MainSpotify from "./components/MainSpotify.vue"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HeaderSpotify,
+    MainSpotify,
   }
 }
 </script>
@@ -23,6 +25,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  
 }
 </style>
