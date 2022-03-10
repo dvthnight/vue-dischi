@@ -52,5 +52,19 @@
         width: 100%;
         background-color: rgb(29, 40, 51);
         color: white;
+        position: relative;
+
+        .container{
+            width: 1160px;
+            // margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+        }
     }
 </style>
