@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HeaderSpotify/>
+    <HeaderSpotify @cerca="setGenere"/>
     <MainSpotify/>
   </div>
 </template>
@@ -9,11 +9,18 @@
 import HeaderSpotify from "./components/HeaderSpotify.vue"
 import MainSpotify from "./components/MainSpotify.vue"
 
+
 export default {
   name: 'App',
   components: {
     HeaderSpotify,
     MainSpotify,
+  },
+
+  methods:{
+    setGenere: function(genereInput){
+      console.log("il genere selezionato è " + genereInput)
+    }
   }
 }
 </script>

@@ -6,7 +6,7 @@
 
        <div class="selection">
            <label for="genere" class="label">Genere</label>
-            <select name="genere" id="genere" v-model="genere" @change="filtraGeneri">
+            <select name="genere" id="genere" v-model="genere" @change="$emit('cerca', genere)">
                 <!-- <option value="">Genere</option> -->
                 <option value="rock">Rock</option>
                 <option value="pop">Pop</option>
@@ -42,12 +42,11 @@
             }
         },
 
-        methods:{
-            filtraGeneri: function(){
-                console.log(this.genere);
-                this.$emit("cerca", this.filter)
-            }
-        }
+        // methods:{
+        //     filtraGeneri: function(){
+        //         console.log(this.genere);
+        //     }
+        // }
     }
 
 </script>
