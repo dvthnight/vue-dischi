@@ -12,20 +12,11 @@
                 
             </select>
 
-            <!-- <label for="artista" class="label">Artista</label>
-            <select name="artista" id="artista" v-model="artista">
-                <option value="">Artista</option>
-                <option value="Bon_Jovi">Bon Jovi</option>
-                <option value="Queen">Queen</option>
-                <option value="Sting">Sting</option>
-                <option value="Steve_Gadd">Steve Gadd Band</option>
-                <option value="Iron_Maiden">Iron Maiden</option>
-                <option value="Eric_Clapton">Eric Clapton</option>
-                <option value="Deep_Purple">Deep Purple</option>
-                <option value="Metallica">Metallica</option>
-                <option value="Dave_Weckl">Dave Weckl</option>
-                <option value="Michael_Jacjson">Michael Jacjson</option>
-            </select> -->
+            <label for="artista" class="label">Artista</label>
+            <select name="artista" id="artista" v-model="artista" @change="$emit('trovaArtista', artista)">
+                <option v-for="(art, i) in arrayArtisti" :key="i">{{art}}</option>
+                
+            </select>
 
        </div>
    </header>
@@ -38,7 +29,9 @@
             return{
                 genere:" ",
 
-                arrayGeneri: ["Rock","Pop", "Jazz", "Metal"]
+                arrayGeneri: ["Rock","Pop", "Jazz", "Metal"],
+
+                arrayArtisti: ["Bon Jovi","Queen","Sting","Steve Gadd Band","Iron Maiden","Eric Clapton","Deep Purple","Metallica","Dave Weckl","Michael Jacjson"]
             }
         },
 

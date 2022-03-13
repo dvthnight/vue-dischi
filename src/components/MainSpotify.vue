@@ -1,7 +1,7 @@
 <template>
     <main>
         <div class="container">
-            <CardSpotify v-for="(card,i) in albumFiltrati" :key="i" :card="card" />
+            <CardSpotify v-for="(card,i) in albumPerGenere" :key="i" :card="card"/>
         </div>
     </main>
     
@@ -28,16 +28,33 @@
             genere: {
                 type: String,
                 
+            },
+            artista: {
+                type: String,
+
             }
         },
 
         computed: {
-            albumFiltrati: function(){
+            
+
+            albumPerGenere: function(){
                 return this.album.filter((el) => {
                     const {genre} = el;
                     return genre.toLowerCase().includes(this.genere.toLowerCase())
                 })
-            }
+            },
+
+            albumPerArtista: function(){
+                return this.album.filter((el) => {
+                    const {author} = el;
+                    return author.toLowerCase().includes(this.artista.toLowerCase())
+                })
+            },
+
+            // albumFiltrati: function(){
+                
+            // },
         },
 
         methods: {

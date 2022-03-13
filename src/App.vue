@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderSpotify @cerca="setGenere"/>
-    <MainSpotify :genere="genereSelezionato"/>
+    <HeaderSpotify @cerca="setGenere" @trovaArtista="setArtista"/>
+    <MainSpotify :genere="genereSelezionato" :artista="artistaSelezionato"/>
   </div>
 </template>
 
@@ -20,6 +20,7 @@ export default {
   data(){
     return {
       genereSelezionato: "",
+      artistaSelezionato: ""
     }
   },
 
@@ -27,6 +28,10 @@ export default {
     setGenere: function(genereInput){
       // console.log("il genere selezionato è " + genereInput)
       this.genereSelezionato = genereInput;
+    },
+
+    setArtista: function(artistaInput){
+      this.artistaSelezionato = artistaInput;
     }
   }
 }
