@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderSpotify @cerca="setGenere"/>
-    <MainSpotify/>
+    <MainSpotify :genere="genereSelezionato"/>
   </div>
 </template>
 
@@ -14,12 +14,19 @@ export default {
   name: 'App',
   components: {
     HeaderSpotify,
-    MainSpotify,
+    MainSpotify ,
+  },
+
+  data(){
+    return {
+      genereSelezionato: "",
+    }
   },
 
   methods:{
     setGenere: function(genereInput){
-      console.log("il genere selezionato è " + genereInput)
+      // console.log("il genere selezionato è " + genereInput)
+      this.genereSelezionato = genereInput;
     }
   }
 }

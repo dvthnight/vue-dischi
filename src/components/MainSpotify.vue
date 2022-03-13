@@ -1,7 +1,7 @@
 <template>
     <main>
         <div class="container">
-            <CardSpotify v-for="(card,i) in album" :key="i" :card="card" />
+            <CardSpotify v-for="(card,i) in albumFiltrati" :key="i" :card="card" />
         </div>
     </main>
     
@@ -21,6 +21,22 @@
             return{
             album: []
 
+            }
+        },
+
+        props: {
+            genere: {
+                type: String,
+                
+            }
+        },
+
+        computed: {
+            albumFiltrati: function(){
+                return this.album.filter((el) => {
+                    const {genre} = el;
+                    return genre.toLowerCase().includes(this.genere.toLowerCase())
+                })
             }
         },
 
