@@ -8,10 +8,8 @@
            <label for="genere" class="label">Genere</label>
             <select name="genere" id="genere" v-model="genere" @change="$emit('cerca', genere)">
                 <!-- <option value="">Genere</option> -->
-                <option value="rock">Rock</option>
-                <option value="pop">Pop</option>
-                <option value="jazz">Jazz</option>
-                <option value="metal">Metal</option>
+                <option v-for="(gen,i) in arrayGeneri" :key="i">{{gen}}</option>
+                
             </select>
 
             <!-- <label for="artista" class="label">Artista</label>
@@ -38,7 +36,9 @@
     export default{
         data(){
             return{
-                genere:" "
+                genere:" ",
+
+                arrayGeneri: ["Rock","Pop", "Jazz", "Metal"]
             }
         },
 
